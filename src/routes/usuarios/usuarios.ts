@@ -9,7 +9,7 @@ usuarioModel.add({
     correo: 'erick@gmail.com',
     nombre: 'Erick Moncada',
     password: 'erick2023',
-    roles: []
+    roles: ['admin']
 });
 
 router.get('/byid/:id',(req,res)=>{
