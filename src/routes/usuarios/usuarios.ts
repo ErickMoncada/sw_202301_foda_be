@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import { Usuarios} from '@libs/usuarios/Usuarios';
+import { IUsuarios, Usuarios} from '@libs/usuarios/Usuarios';
 
 const usuarioModel = new Usuarios();
 usuarioModel.add({
@@ -34,6 +34,22 @@ router.get('/',(_req,res)=>{
 
 router.get('/all',(_req,res)=>{
     res.status(200).json(usuarioModel.getAll());
+});
+
+router.post('/new',(req,res)=>{
+    const {nombre ="Sebastian", correo = "sebastian@gmail.com",password="sebastian2023"} = req.body;
+    //TODO: Validar Entrada de datos
+    const newUsuario : IUsuarios={
+        codigo: "",
+        nombre,
+        correo ,
+        password ,
+        roles: []
+    };
+    if (usuarioModel.add(newUsuario)){
+        return res.status(200).json({"created":true});
+    }
+    return res.status(400).json({"error":"Error al agregar un nuevo Usuario"});
 });
 
 export default router;
