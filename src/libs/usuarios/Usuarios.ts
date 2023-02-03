@@ -33,4 +33,29 @@ export class Usuarios{
         });
         return usuarioToReturn;
     }
+    update(updateEmpresa: IUsuarios){
+        let updated = false;
+        const newUsuario: IUsuarios[] =this.usuarios.map((usu)=>{
+            if(usu.codigo === updateEmpresa.codigo){
+                updated = true;
+                return {...usu,...updateEmpresa,update: new Date()};
+            }
+            return usu;
+        });
+        this.usuarios =newUsuario;
+        return updated;
+    }
+    delete(codigo: string){
+        const usuarioToDelete = this.usuarios.find((emp)=>{
+            return emp.codigo === codigo;
+        });
+    if(usuarioToDelete){
+        const newUsuario : IUsuarios[]=this.usuarios.filter((emp)=>{
+            return emp.codigo !== codigo; 
+        });
+        this.usuarios = newUsuario;
+        return true;
+    }
+        return false;
+    }
 }

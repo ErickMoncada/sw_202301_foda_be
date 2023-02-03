@@ -52,4 +52,29 @@ router.post('/new',(req,res)=>{
     return res.status(400).json({"error":"Error al agregar un nuevo Usuario"});
 });
 
+router.put('/upd/:id',(req,res)=>{
+    const {id}=req.params;
+    const {nombre ="Moncada", correo = "Moncada@gmail.com",password="Moncada2023"} = req.body;
+
+    const UpdateUsuario : IUsuarios={
+        codigo: id,
+        nombre,
+        correo,
+        password,
+        roles: []
+    };
+    if(usuarioModel.update(UpdateUsuario)){
+        return res.status(200).json({"update":true});
+    }
+    return res.status(400).json({"error":"Error al actualizar los datos"})
+});
+
+router.delete('/del/:id',(req,res)=>{
+    const {id : codigo} = req.params;
+    if(usuarioModel.delete(codigo)){
+       return res.status(200).json({"deleted":true})
+    }
+    return res.status(404).json({"error":"No se pudo eliminar usuario"});
+   });
+
 export default router;
