@@ -1,6 +1,7 @@
 import express from 'express';
 const router  = express.Router();
 import empresasRouter from './empresas/empresas';
+import usuariosRouter from './usuarios/usuarios';
 // REST API
 // Internet ->HTTP -> REST API -> DB
 // SOAP XML wsdl
@@ -28,6 +29,9 @@ router.get('/', (_req, res) => {
 
  //http://localhost:3001/empresas
  router.use('/empresas',empresasRouter);
+
+//http://localhost:3001/usuarios
+router.use('/usuarios',usuariosRouter);
 
  //router.get router.post router.delete router.put router.use 
 export default router;
