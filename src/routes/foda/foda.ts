@@ -7,6 +7,7 @@ import { Empresas } from '@libs/Empresas/Empresas';
 
 const empresasDao = new EmpresasDao(MongoDBConn);
 let fodaDao;
+// @ts-ignore
 let empresasModel:Empresas;
 let fodaModel:Foda;
 empresasDao.init().then(()=>{

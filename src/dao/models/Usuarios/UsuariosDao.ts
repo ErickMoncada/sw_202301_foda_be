@@ -1,9 +1,9 @@
 import { MongoDAOBase } from "@dao/MongoDAOBase";
 import { IDBConnection } from "@server/dao/IDBConnection";
-import { IEmpresa } from "./IEmpresas";
+import { IUsuarios } from "./IUsuarios";
 
-export class EmpresasDao extends MongoDAOBase<IEmpresa>{
+export class UsuariosDao extends MongoDAOBase<IUsuarios>{
   constructor(conexion: IDBConnection){
-      super("empresas", conexion);
+      super("usuarios", conexion);
   }
 }

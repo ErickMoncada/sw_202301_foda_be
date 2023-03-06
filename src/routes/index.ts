@@ -35,4 +35,7 @@ import fodaRouter from './foda/foda';
 router.use('/foda', fodaRouter);
  //router.get  router.post router.put router.delete  router.use
 
+ import usuariosRouter from './usuarios/usuarios';
+ router.use('/usuarios',usuariosRouter);
+
 export default router;

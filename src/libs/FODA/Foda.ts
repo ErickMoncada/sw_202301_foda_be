@@ -5,6 +5,7 @@ import { ObjectId } from "mongodb";
 
 export class Foda {
   private fodaDao: FodaDao;
+  // @ts-ignore
   private empresaDao: IDataAccessObject;
   constructor(foda: IDataAccessObject, empresa: IDataAccessObject) {
     this.fodaDao = foda as FodaDao;

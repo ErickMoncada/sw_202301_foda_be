@@ -7,7 +7,7 @@ import expressLogger from './expressLogger';
 const createServer = () => {
   const app = express();
   app.use(express.urlencoded({ extended: true }));
-  app.use(expressLogger); //estatus en el cmd 
+  app.use(expressLogger);
   app.use(cors());
   app.use(express.json());
   app.disable('x-powered-by');
