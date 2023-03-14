@@ -2,7 +2,7 @@ import express from 'express';
 const router  = express.Router();
 
 
-
+//pull request de german
 // REST API
 // Internet  ->  HTTP  ->  REST API JSON ->  DB
 // SOAP XML wsdl

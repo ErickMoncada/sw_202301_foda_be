@@ -36,5 +36,16 @@
     "module-alias": "^2.2.2",
     "mongodb": "^5.0.1",
     "winston": "^3.8.2"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/German-Ordg/sw_202301_foda_be-1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/German-Ordg/sw_202301_foda_be-1/issues"
+  },
+  "homepage": "https://github.com/German-Ordg/sw_202301_foda_be-1#readme"
 }
